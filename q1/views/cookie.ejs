@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Cookie</title>
+  </head>
+  <body>
+    <form action="/cookies" method="post">
+        <fieldset>
+            <legend>Adding Cookies</legend>
+            <label for="key">Keys:  </label>
+            <input type="text" id="key" name="key" /><br>
+            <label for="value">Value:</label>
+            <input type="text" id="value" name="value" /><br>
+            <input type="submit" value="Add Cookie">
+        </fieldset>
+        
+    </form>
+
+    <table>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+        <% cookies.forEach( x=> {  %>
+            <tr>
+                <td><%= x.key %></td>
+                <td><%= x.value %></td>
+            </tr>
+        <% }) %>
+    </table>
+  </body>
+</html>
